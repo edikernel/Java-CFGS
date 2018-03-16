@@ -25,5 +25,34 @@ public class HolaMundo {
     char j = "j";
     //boolen, 1 byte
     boolean m = true;
+    //Ejemplo de entrada de datos y gestión de errores
+    //Crear la cariable que contine la herramienta Scanner
+    teclado = new Scanner(System.in);
+    //en la siguietne línea pide los datos y comprueba si és el tipo de dato solicitado
+    m = teclado.hasNextInt();
+    //Si el tipo de datos és correcto continua con el programa
+    if (m) {
+      System.out.println("Introduce un número del 1 al 10");
+      //El tipo de dato es correcto, asigna el valor correspondiente y continua con el análisis de los datos
+      in = teclado.NextInt();
+      //Elimina el intro de la memória buffer de la variable
+      teclado.NextLine();
+      if (in >= 1 && in <= 10) {
+        System.out.println("Los datos introducidos són correctos");
+        System.out.println("Pràctica el Switch");
+        switch (in) {
+          case 1: System.out.println("Has elegido el 1");
+            break;
+          case 2: System.out.println("Has elegido el 2");
+        }
+      }
+      else {
+        System.out.println("Los datos introducidos no són correctos");
+      }
+      
+    }
+    else {
+      System.out.println("Los datos introducidos no són correctos");
+    }
   }
 }
