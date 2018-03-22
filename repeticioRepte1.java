@@ -24,7 +24,7 @@ public class repeticioRepte1 {
       car = lector.nextInt();
       lector.nextLine();
       //fer un while, compara contador amb car, si és true continua el programa
-      while (car =< 100) {
+      while (car <= 100) {
         System.out.print(-);
         car = car + 1;
       }
