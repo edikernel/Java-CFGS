@@ -18,12 +18,16 @@ public class repeticioRepte1 {
     //////////////////////////////////////
     
     //Pregunta a l'usuari quants caracters '-' vol que és repeteixi
-    System.out.println("Cuants càracters "-" vols que és mostri per pantalla");
+    System.out.println("Cuants càracters "-" vols que és mostri per pantalla? (1-100)");
     respostaOK = lector.hasNextInt();
     if (repostaOK) {
       car = lector.nextInt();
       lector.nextLine();
-      //fer un while, compara contador amb car, si és true
+      //fer un while, compara contador amb car, si és true continua el programa
+      while (car =< 100) {
+        System.out.print(-);
+        car = car + 1;
+      }
     }
     else {
       System.out.println("Les dades introduides no són correctes");
