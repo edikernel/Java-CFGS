@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class repeticioRepte2 {
   //Identificadores estáticos
   private static final byte MAX = 10;
+  private static final byte MIN = 0;
   static void main (String [] args) {
     //variables
       byte contador = 0;
@@ -10,10 +11,19 @@ public class repeticioRepte2 {
     
     //mientras contador sea más pequeño o igual que MAX se repite la secuencia, contador aumenta el valor
     while (contador <= MAX) {
+      //Aumenta el valor
       contador = contador + 1;
-      System.out.print(contador);
+      //Muestra por pantalla el resultado del contador
+      System.out.print("/" +contador);
+      //Si contador llega a 10 modifica la variable finish que será utilizada a continuación.
       if (contador = 10) {
         finish = true;
+      }
+      //Si finish és true ejecuta el while
+      if (finish) {
+        //mientras contador sea igual a max y mayor o igual que MIN se ejecuta la cuenta atrás
+        while (contador ) {
+        }
       }
     }
   }
