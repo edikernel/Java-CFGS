@@ -1,4 +1,4 @@
-package repeticiorepte2;
+//package repeticiorepte2;
 import java.util.Scanner;
 public class repeticioRepte2 {
   //Identificadores estáticos
