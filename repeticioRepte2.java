@@ -10,19 +10,24 @@ public class repeticioRepte2 {
       boolean finish = false;
     
     //mientras contador sea más pequeño o igual que MAX se repite la secuencia, contador aumenta el valor
-    while (contador <= MAX) {
+    while (contador < MAX) {
       //Aumenta el valor
       contador = contador + 1;
       //Muestra por pantalla el resultado del contador
-      System.out.print("/" +contador);
+      System.out.print(contador +"/");
       //Si contador llega a 10 modifica la variable finish que será utilizada a continuación.
-      if (contador = 10) {
+      if (contador = MAX) {
         finish = true;
       }
       //Si finish és true ejecuta el while
       if (finish) {
+        //Línea para cambiar diferenciar
+        System.out.println("--------------------------------");
         //mientras contador sea igual a max y mayor o igual que MIN se ejecuta la cuenta atrás
-        while (contador ) {
+        while (contador < MAX && contador > MIN) {
+          //Se inicia el contador hacia atrás
+          contador = contador - 1;
+          System.out.print(contador +"/");
         }
       }
     }
