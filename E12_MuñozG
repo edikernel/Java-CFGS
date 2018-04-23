@@ -20,12 +20,12 @@ public class E12_MuñozG {
         //VARIABLES//
         ////////////
         
-        Scanner teclado = new Scanner(System.in); //Assignar a la variable l'eina
+        Scanner teclado = new Scanner(System.in); //Assignar a la variable l'eina per introduïr dades pel teclat.
         boolean userOK = false; //per controlar si el nom de l'usuari es correcte
-        boolean tipusOK = false; //Per controlar si les dades son correctes
-        boolean dadesOK = false;
+        boolean tipusOK = false; //Per controlar si el tipus de dada es correcte
+        boolean dadesOK = false;//Per controlar si compleix amb totes les condicions de la dada esperada.
         int numUsers = 0;//Numero per defecte d'usuaris
-        String[] users = new String[10]; //array que contindrá el nom dels usuaris
+        String[] users; //array que contindrá el nom dels usuaris, encara no té la mesura de l'array.
         
         do {
             System.out.println("Quants usuaris vols registrar?");
@@ -33,11 +33,22 @@ public class E12_MuñozG {
             if (tipusOK) {//Si es true ...
                 numUsers = teclado.nextInt(); //guarda en aquesta variable el valor introduït per l'usuari
                 teclado.nextLine();//Neteja la memória buffer
-                if (numUsers >= USER_MIN) {
+                if (numUsers >= USER_MIN) { //si el número anterior es igual o més gran que 1 ...
                     dadesOK = true;//Les dades introduides son correctes.
                 }
+                else {
+                    System.out.println("______________________________________________________________");
+                    System.out.println("Les dades introduïdes no son correctes, torna-ho a intentar-ho");
+                }
+            }
+            else {
+                teclado.nextLine();//neteja la memória buffer.
+                System.out.println("______________________________________________________________");
+                System.out.println("Les dades introduïdes no son correctes, torna-ho a intentar-ho");
             }
         } while (!dadesOK);
+        users = new String [numUsers];//Indicar la mesura de l'array, la mesura segons les dades anteriors.
+        /**
         do {
             //System.out.println("-----------------------------");
             System.out.println("Introdueix el nom de l'usuari");
@@ -51,6 +62,6 @@ public class E12_MuñozG {
                 System.out.println("____________________________________________________________________");
                 teclado.nextLine();//neteja la memoria buffer
             }
-        } while (!userOK); //si es false torna a repetir tot el codi
+        } while (!userOK); //si es false torna a repetir tot el codi */
     }   
 }
