@@ -29,7 +29,7 @@ public class P3_MuñozG {
     private static final int DIA_MAX = 31;
     private static final int PUNT_MIN = 2;
     private static final int PUNT_MAX = 30;
-    private static final int CONT_MAX = 3; //valor estatic, contador máxim per fer control de preguntes
+    private static final int MAL_MAX = 3; //valor estatic, contador máxim per fer control de preguntes
     private static final int RESP_SI = 1; //valor correcte de la resposta si vol tornar a inscriure altre participant
     private static final int RESP_NO = 2; //valor correcte de la resposta si vol finalitzar l'inscripció dels participants
     public static void main(String[] args) {
@@ -39,41 +39,77 @@ public class P3_MuñozG {
         
         Scanner teclado = new Scanner(System.in); //variable per invocar l'eina de lectura de dades del teclat
         boolean repeat, tipOK, respOK, totOK;
-        repeat = false;
-        respOK = false;
-        totOK = false;
+        repeat = false;//valor per defecte, repetició del programa?
+        respOK = false;//la resposta es l'esperada?
+        totOK = true;//tot el programa es OK.
         int[] id = new int[10]; //contindrá els identificadors creats per l'usuari, màxim 10 usuaris.
-        int respRepeat;
+        int respRepeat; //la resposta de l'usuari, 1 o 0, repeteix o no
+        int id;
+        int contMal = 0; //contador de respostes malament
+        
         ////////////////////////////////
         //PREGUNTES I GESTIÓ D'ERRORS//
         //////////////////////////////
-        do {
-            System.out.println("Vols inscriure altre participant? 1:Si / 2:no");
-            do {
-                tipOK = teclado.hasNextInt();//es tipus int?
-                if (tipOK) { //si es tipus int ...
-                    respRepeat = teclado.nextInt(); //assigna el valor introduït a aquesta variable.
-                    teclado.nextLine(); //Neteja memòria buffer
-                    if (respRepeat == RESP_SI || respRepeat == RESP_NO) {//si respRepeat es igual a 1 o 2...
-                        respOK = true;//La resposta es l'esperada i sortira del bucle de la pregunta
-                        if (respRepeat == RESP_SI) { // si respRepeat es igual a 1 ...
-                            repeat = true; //torna a inscriure altre usuari
+        do {   
+            repeat = false; //torna a deixa el valor per defecte
+            if (totOK) { //si totes les respostes han sigut correctes
+                while (contMal < MAL_MAX) {//mentre no hi hagin 3 respostes malament ...
+                    while (contMal < MAL_MAX) {//mentre no hi hagin 3 respostes malament ...
+                        //Pregunta pel número identificatiu de l'inscriptor
+                        System.out.println("Quin és el número identificatiu del participant? (1 - 2000)");
+                        //Agafa les dades del teclat i filtra les respostes
+                        respOK = teclado.hasNextInt(); //la resposta es del tipus int?
+                        if (respOK) { //si la resposta ha sigut tipus int...
+                            id = teclado.nextInt(); //ha de ser array, corregeix######################
+                            teclado.nextLine();//neteja memòria buffer
+                            
                         }
-                        else if (respRepeat == RESP_NO) { // ales hores si respRepeat es igual a 2 ...
-                            repeat = false; //S'acabat el registre, no es vol registrar més usuaris.
+                        else {
+                            contMal++;//la resposta ha sigut incorrecte i augmenta el contador...
+                            teclado.nextLine();//neteja memòria buffer
                         }
                     }
-                    else {
-                        System.out.println("La resposta no es correcte, torna a respondre la pregunta");
-                        respOK = false;//la resposta no es l'esperada i torna a executar el bucle de la pregunta
-                    }
+                    
+                    
+                    
+                    
+                    //tot el codi dins les respostes correctes
+                    
+                    
+                    
+                    
+                    System.out.println("Vols inscriure altre participant? 1:Si / 2:no");
+                    do {
+                        tipOK = teclado.hasNextInt();//es tipus int?
+                        if (tipOK) { //si es tipus int ...
+                            respRepeat = teclado.nextInt(); //assigna el valor introduït a aquesta variable.
+                            teclado.nextLine(); //Neteja memòria buffer
+                            if (respRepeat == RESP_SI || respRepeat == RESP_NO) {//si respRepeat es igual a 1 o 2...
+                                respOK = true;//La resposta es l'esperada i sortira del bucle de la pregunta
+                                if (respRepeat == RESP_SI) { // si respRepeat es igual a 1 ...
+                                    repeat = true; //torna a inscriure altre usuari
+                                }
+                                else if (respRepeat == RESP_NO) { // ales hores si respRepeat es igual a 2 ...
+                                    repeat = false; //S'acabat el registre, no es vol registrar més usuaris.
+                                }
+                            }
+                            else {
+                                System.out.println("La resposta no es correcte, torna a respondre la pregunta");
+                                respOK = false;//la resposta no es l'esperada i torna a executar el bucle de la pregunta
+                            }
+                        }
+                        else {//si no es tipus int ...
+                            teclado.nextLine();//Neteja memòria buffer.
+                            System.out.println("El tipus de dada no es correcte, contesta amb les dades demanades");
+                            System.out.println("_________________________________________________________________");
+                        }
+                    } while (!respOK);//mentre respostaOK sigui false ...
+                    
+                    
+                    //tot el codi dins les 3 respostes correctes
+                    
                 }
-                else {//si no es tipus int ...
-                    teclado.nextLine();//Neteja memòria buffer.
-                    System.out.println("El tipus de dada no es correcte, contesta amb les dades demanades");
-                    System.out.println("_________________________________________________________________");
-                }
-            } while (!respOK);
-        } while (repeat);
+            }                        
+        } while (repeat); //mentre repeat sigui true...
     }
 }
