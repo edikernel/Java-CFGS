@@ -17,8 +17,9 @@ public class P3_MuñozG {
     private static final int NOIA = 1;
     private static final int NOI = 2;
     private static final int INF = 1;
-    private static final String S-INF = "Infantil";
+    private static final String S_INF = "Infantil";
     private static final int JUN = 2;
+    private static final String S_JUN = "Junior";
     private static final int SEN = 3;
     private static final int ID_MIN = 1;
     private static final int ID_MAX = 2000;
