@@ -17,6 +17,7 @@ public class P3_MuñozG {
     private static final int NOIA = 1;
     private static final int NOI = 2;
     private static final int INF = 1;
+    private static final String S-INF = "Infantil";
     private static final int JUN = 2;
     private static final int SEN = 3;
     private static final int ID_MIN = 1;
@@ -257,9 +258,12 @@ public class P3_MuñozG {
                                 if (tipOK) { //si la resposta ha sigut tipus int...
                                     categoria[contCat] = teclado.nextInt();//guarda el valor en la posició corresponent de la array
                                     teclado.nextLine();//neteja memòria buffer
-                                    if (categoria[contCat] == NOIA || categoria[contCat] == NOI) {//si compleix amb les condicions bàsiques...
+                                    if (categoria[contCat] >= INF && categoria[contCat] <= SEN) {//si compleix amb les condicions bàsiques...
                                         respOK = true;//la resposta es correcte
                                         contGen++;//El identificador es correcte i augmenta una posició més per la pròxima volta.
+                                        switch (categoria[contCat]) {
+                                                case 
+                                        }
                                     }
                                     else {
                                         contMal++;//la resposta ha sigut incorrecte i augmenta el contador...
