@@ -407,14 +407,31 @@ public class P3_MuñozG {
                                         for (int y = z + 1; y < contador; y++) {//y es igual al contador x pero amb una posició per davant, mentre y sigui més petit que contador...
                                             if (puntuacio[z] < puntuacio[y]) { //si la posició x es més gran que la posició y
                                                 //Ordena identificador
-                                                
+                                                auxId = id[z];
+                                                id[z] = id[y];
+                                                id[y] = auxId;
                                                 
                                                 //ordendar dates: any, mes, dia
-                                                
+                                                auxAny = any[z];
+                                                any[z] = any[y];
+                                                any[y] = auxAny;
+                                                /////////////////
+                                                auxMes = mes[z];
+                                                mes[z] = mes[y];
+                                                mes[y] = auxAny;
+                                                /////////////////
+                                                auxDia = dia[z];
+                                                dia[z] = dia[y];
+                                                dia[y] = auxDia;
                                                 //ordenar genere
+                                                auxGenere = genere[z];
+                                                genere[z] = genere[y];
+                                                genere[y] = auxGenere;
                                                 
                                                 //ordenar categoria
-                                                
+                                                auxCategoria = categoria[z];
+                                                categoria[z] = categoria[y];
+                                                categoria[y] = auxcategoria;
                                                 
                                                 //Ordenar Les dades per puntuació
                                                 auxPunt = puntuacio[z];
