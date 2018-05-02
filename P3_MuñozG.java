@@ -63,6 +63,7 @@ public class P3_MuñozG {
         int auxId; //auxiliar per l'ordenació
         int auxAny; //auxiliar per l'ordenació
         int auxMes; //auxiliar per l'ordenació
+        int auxDia; //auxiliar per l'ordenació
         int auxGenere; //auxiliar per l'ordenació
         int auxCategoria; //auxiliar per l'ordenació
         int contador = 0; //contador de les posicions
@@ -365,7 +366,7 @@ public class P3_MuñozG {
                      */
                         switch (genere[x]) {//evaluem el valor de la array
                             case NOIA: //en aquest cas..
-                                genereString = S_NOIA; //modifica el valor d'aquesta variable
+                                genereString = S_NOIA; //modifica el valor d'aquesta variable per un valor String
                                 break;
                             case NOI:
                                 genereString = S_NOI;
@@ -405,7 +406,7 @@ public class P3_MuñozG {
                                 if (respOrdre == RESP_SI) { // si respRepeat es igual a 1 ...
                                     for (int z = 0; z < contador - 1; z++) { //mentres el contador o sigui mes petit que conPunt -1...
                                         for (int y = z + 1; y < contador; y++) {//y es igual al contador x pero amb una posició per davant, mentre y sigui més petit que contador...
-                                            if (puntuacio[z] < puntuacio[y]) { //si la posició x es més gran que la posició y
+                                            if (puntuacio[z] < puntuacio[y]) { //si la posició x es més gran que la posició y ... (Per ordenar les dades.)
                                                 //Ordena identificador
                                                 auxId = id[z];
                                                 id[z] = id[y];
@@ -431,7 +432,7 @@ public class P3_MuñozG {
                                                 //ordenar categoria
                                                 auxCategoria = categoria[z];
                                                 categoria[z] = categoria[y];
-                                                categoria[y] = auxcategoria;
+                                                categoria[y] = auxCategoria;
                                                 
                                                 //Ordenar Les dades per puntuació
                                                 auxPunt = puntuacio[z];
