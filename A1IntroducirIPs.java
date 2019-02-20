@@ -19,6 +19,8 @@ public class A1IntroduirIPs {
 	////////////
 	//Declaració array
 	String[] numerosIp = new String[IP_MAX];
+	//guarda les dades introduides en la array
+	Scanner resp = new Scanner(System.in);
     
     public static void main(String[] args) {
         // Es crea una variable prg de tipus A1IntroduirIPs i es crida al seu
@@ -31,7 +33,7 @@ public class A1IntroduirIPs {
      * Programa principal. 
      * Anirem demanant IP's fins que el nombre d'IPs introduÃ¯des siguin les que
      * marca la constant del nostre programa, o bÃ© la IP introduÃ¯da sigui 0.0.0.0
-     * Una variable anirÃ  comptant el nombre d'IPs que s'han introduÃ¯t i indexant 
+     * Una variable anirÃ  comptant el nombre d'IPs que s'han introduÃ¯t i indexant 
      * a la vegada l'array on aquestes es guarden.
      */
     private void inici(){
@@ -43,7 +45,12 @@ public class A1IntroduirIPs {
      * global corresponent per a ser usada des del codi principal.
      */
     private void demanarIP(){
+    	while ()
     	System.out.println("Introdueix un número IP valid");
+    	resp.hasNextLine();//es tipus string introduït pel teclat?
+    	if (resp.hasNextLine()) {//si es tipus string
+    		
+    	}
     	
 
     }
@@ -51,7 +58,7 @@ public class A1IntroduirIPs {
     /** FunciÃ³ o mÃ¨tode que recorre totes les posicions de l'arrayIps comprovant
      * si alguna d'aquestes posicions contÃ© el mateix valor que el que es troba
      * a la variable global que contÃ© la ip introduida, en cas de ser aixÃ­ 
-     * guardarÃ  en una variable global el valor de cert.
+     * guardarÃ  en una variable global el valor de cert.
      */
     private void buscarIpsRepetides(){
 
