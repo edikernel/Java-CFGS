@@ -18,9 +18,9 @@ public class A1IntroduirIPs {
 	//VARIABLES//
 	////////////
 	//Declaració array
-	String[] numerosIp = new String[IP_MAX];
+	//String[] numerosIp = new String[IP_MAX];
 	//guarda les dades introduides en la array
-	Scanner resp = new Scanner(System.in);
+	//Scanner resp = new Scanner(System.in);
     
     public static void main(String[] args) {
         // Es crea una variable prg de tipus A1IntroduirIPs i es crida al seu
@@ -37,7 +37,7 @@ public class A1IntroduirIPs {
      * a la vegada l'array on aquestes es guarden.
      */
     private void inici(){
-
+    	demanarIP();
     }
     
     /** FunciÃ³ o mÃ¨tode que demana per teclat una IP i no en fa la comprovaciÃ³ de si Ã©s o
@@ -45,14 +45,14 @@ public class A1IntroduirIPs {
      * global corresponent per a ser usada des del codi principal.
      */
     private void demanarIP(){
-    	while ()
-    	System.out.println("Introdueix un número IP valid");
-    	resp.hasNextLine();//es tipus string introduït pel teclat?
-    	if (resp.hasNextLine()) {//si es tipus string
-    		
-    	}
-    	
-
+    	/**while (resp.hasNextLine()) {
+    		System.out.println("Introdueix un número IP valid");
+        	resp.hasNextLine();//es tipus string introduït pel teclat?
+        	if (resp.hasNextLine()) {//si es tipus string
+        		numerosIp[0] = numresp.nextLine;
+        	}
+    	}*/
+    	System.out.println("Esta mierda no va");
     }
     
     /** FunciÃ³ o mÃ¨tode que recorre totes les posicions de l'arrayIps comprovant
