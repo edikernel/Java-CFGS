@@ -1,4 +1,4 @@
-package eac4p1;
+package eac4p1OmplirArray;
 
 import java.util.Scanner;
 import java.util.regex.Pattern;
@@ -18,9 +18,11 @@ public class A1IntroduirIPs {
 	//VARIABLES//
 	////////////
 	//Declaració array
-	//String[] numerosIp = new String[IP_MAX];
+	String[] numerosIp = new String[IP_MAX];
 	//guarda les dades introduides en la array
-	//Scanner resp = new Scanner(System.in);
+	Scanner resp = new Scanner(System.in);
+    boolean ipCorrecta;
+    
     
     public static void main(String[] args) {
         // Es crea una variable prg de tipus A1IntroduirIPs i es crida al seu
@@ -36,7 +38,7 @@ public class A1IntroduirIPs {
      * Una variable anirÃ  comptant el nombre d'IPs que s'han introduÃ¯t i indexant 
      * a la vegada l'array on aquestes es guarden.
      */
-    private void inici(){
+    public void inici(){
     	demanarIP();
     }
     
@@ -44,15 +46,13 @@ public class A1IntroduirIPs {
      * no correcte, nomÃ©s demana que s'introdueixi un text i el guarda a la variable
      * global corresponent per a ser usada des del codi principal.
      */
-    private void demanarIP(){
-    	/**while (resp.hasNextLine()) {
-    		System.out.println("Introdueix un número IP valid");
-        	resp.hasNextLine();//es tipus string introduït pel teclat?
-        	if (resp.hasNextLine()) {//si es tipus string
-        		numerosIp[0] = numresp.nextLine;
-        	}
-    	}*/
-    	System.out.println("Esta mierda no va");
+    public void demanarIP(){
+    	//Sempre que x sigui igual o més petit que IP_MAX fes... 
+    	for (int x = 0; x <= IP_MAX; x++) {
+    		System.out.println("Introdueix una adreça IP vàlida");
+        	//escoltar les dades introduides pel teclat i guardar les dades en array
+    		numerosIp[x] = resp.nextLine();
+    	}
     }
     
     /** FunciÃ³ o mÃ¨tode que recorre totes les posicions de l'arrayIps comprovant
@@ -69,7 +69,7 @@ public class A1IntroduirIPs {
      * En cas que tots els nÃºmeros obtinguts de les quatre parts estiguin entre
      * 0 i 255 fixa cert a la variable global ipCorrecta.
      */
-    private void comprovarFormatIp(){
+    public void comprovarFormatIp(){
         ipCorrecta = false;
         String[] numerosIp = ipIntroduida.split(Pattern.quote("."));
         if ( numerosIp.length == 4 ){
