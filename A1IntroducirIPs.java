@@ -12,7 +12,7 @@ public class A1IntroduirIPs {
 	/////////////
 	
 	//determina el valor máxim de la array
-	static final int IP_MAX = 9;
+	static final int IP_MAX = 1;
 	
 	//////////////
 	//VARIABLES//
@@ -23,6 +23,8 @@ public class A1IntroduirIPs {
 	String[] numerosIp = new String[3];
 	//guarda les dades introduides en la array
 	Scanner resp = new Scanner(System.in);
+	//Separador dels diferents rangs IP
+	String separador = Pattern.quote(".");
     boolean ipCorrecta;
     
     
@@ -42,6 +44,7 @@ public class A1IntroduirIPs {
      */
     public void inici(){
     	demanarIP();
+    	comprovarFormatIp();
     }
     
     /** FunciÃ³ o mÃ¨tode que demana per teclat una IP i no en fa la comprovaciÃ³ de si Ã©s o
@@ -53,7 +56,7 @@ public class A1IntroduirIPs {
     	for (int x = 0; x <= IP_MAX; x++) {
     		System.out.println("Introdueix una adreça IP vàlida");
         	//escoltar les dades introduides pel teclat i guardar les dades en array
-    		numerosIp[x] = resp.nextLine();
+    		ipIntroduida[x] = resp.nextLine();
     	}
     }
     
@@ -73,7 +76,8 @@ public class A1IntroduirIPs {
      */
     public void comprovarFormatIp(){
     	while (!ipCorrecta) {
-    		String[] numerosIp = ipIntroduida.split(Pattern.quote("."));
+    		//String[] numerosIp = ipIntroduida.split(Pattern.quote("."));
+    		//String[] numerosIp = ipIntroduida.split(separador);
             if ( numerosIp.length == 4 ){
                 int num1 = Integer.parseInt(numerosIp[0]);
                 int num2 = Integer.parseInt(numerosIp[1]);
@@ -96,4 +100,4 @@ public class A1IntroduirIPs {
      */
     private void mostrarArrayIps(){
 
-    }
+}
