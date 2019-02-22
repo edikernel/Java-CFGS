@@ -18,7 +18,9 @@ public class A1IntroduirIPs {
 	//VARIABLES//
 	////////////
 	//Declaració array
-	String[] numerosIp = new String[IP_MAX];
+	//String[] numerosIp = new String[IP_MAX];
+	String[] ipIntroduida = new String[IP_MAX];
+	String[] numerosIp = new String[3];
 	//guarda les dades introduides en la array
 	Scanner resp = new Scanner(System.in);
     boolean ipCorrecta;
@@ -70,20 +72,23 @@ public class A1IntroduirIPs {
      * 0 i 255 fixa cert a la variable global ipCorrecta.
      */
     public void comprovarFormatIp(){
-        ipCorrecta = false;
-        String[] numerosIp = ipIntroduida.split(Pattern.quote("."));
-        if ( numerosIp.length == 4 ){
-            int num1 = Integer.parseInt(numerosIp[0]);
-            int num2 = Integer.parseInt(numerosIp[1]);
-            int num3 = Integer.parseInt(numerosIp[2]);
-            int num4 = Integer.parseInt(numerosIp[3]);
-            if ( num1 >= 0 && num1 <= 255 &&
-                    num2 >= 0 && num2 <= 255 &&
-                    num3 >= 0 && num3 <= 255 &&
-                    num4 >= 0 && num3 <= 255 ){
-                ipCorrecta = true;
+    	while (!ipCorrecta) {
+    		String[] numerosIp = ipIntroduida.split(Pattern.quote("."));
+            if ( numerosIp.length == 4 ){
+                int num1 = Integer.parseInt(numerosIp[0]);
+                int num2 = Integer.parseInt(numerosIp[1]);
+                int num3 = Integer.parseInt(numerosIp[2]);
+                int num4 = Integer.parseInt(numerosIp[3]);
+                if ( num1 >= 0 && num1 <= 255 &&
+                        num2 >= 0 && num2 <= 255 &&
+                        num3 >= 0 && num3 <= 255 &&
+                        num4 >= 0 && num3 <= 255 ){
+                    ipCorrecta = true;
+                }
             }
-        }
+    	}
+        //ipCorrecta = false;
+        
     }
     
     /** FunciÃ³ o mÃ¨tode que recorre l'arrayIps per mostrar fila 
@@ -92,5 +97,3 @@ public class A1IntroduirIPs {
     private void mostrarArrayIps(){
 
     }
-    
-}
