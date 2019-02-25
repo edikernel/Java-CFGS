@@ -134,8 +134,12 @@ public class A1IntroduirIPs {
     /** FunciÃƒÂ³ o mÃƒÂ¨tode que recorre l'arrayIps per mostrar fila 
      * a fila el seu contingut.
      */
-    private void mostrarArrayIps(){
-        
+    public void mostrarArrayIps(){
+    	System.out.println("Les IP introduides son les seguents");
+        for (int x = 0; x < IP_MAX; x++) {
+        	System.out.println(ipIntroduida[x]);
+        	System.out.println("#################################################################");
+        }
     }
 
 }
