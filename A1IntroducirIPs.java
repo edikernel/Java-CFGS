@@ -77,7 +77,12 @@ public class A1IntroduirIPs {
      * guardarà en una variable global el valor de cert.
      */
     public void buscarIpsRepetides(){
-    	
+    	//Doble bucle for per recorre totes les posicions i comparar amb el métode equals les dades
+    	for (int x = 0; x < ipIntroduida.length; x++) {
+    		for (int y = x + 1; y < ipIntroduida.length; y++) {
+    			ipIntroduida[x].equals(ipIntroduida[y]);
+    		}
+    	}
     }
     
     /** Funció o mètode que mitjançant un split aplicat a l'String ipIntroduida
