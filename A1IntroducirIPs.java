@@ -76,8 +76,8 @@ public class A1IntroduirIPs {
      * a la variable global que conté la ip introduida, en cas de ser així 
      * guardarà en una variable global el valor de cert.
      */
-    private void buscarIpsRepetides(){
-
+    public void buscarIpsRepetides(){
+    	
     }
     
     /** Funció o mètode que mitjançant un split aplicat a l'String ipIntroduida
