@@ -27,14 +27,15 @@ public class A1IntroduirIPs {
     //variable que fa la crida al metode escaner
     Scanner resp = new Scanner(System.in);
     //s'utilitzará per determinar si la Ip cumpleix tots els requisits
-    boolean ipCorrecta;
+    boolean arrayOmplert, ipCorrecta, ipRepetida, fin;
     //S'utilitzará per controlar el bucle comprovarFormatIp()
     int contComprovacio;
     /**crea el array on guardará les dades introduides separades pel ".", el tamany de l'array es veura modificat
      * segons les dades enmagatzemades en ipIntroduida
      */
     String[] numerosIp = new String[0];
-    //String[] numerosIp = ipIntroduida[contComprovacio].split(Pattern.quote("."));
+    //variable que conte la ip no valida, la ip que finalitza el proces.
+    String ipFin = "0.0.0.0";
     //contindran els 4 octets que composa una dirección IP, s'utilitzará per evaluar si compleix amb els requisits
     int num1, num2, num3, num4;
     
@@ -54,8 +55,30 @@ public class A1IntroduirIPs {
      * a la vegada l'array on aquestes es guarden.
      */
     public void inici(){
-    	demanarIP();
-    	comprovarFormatIp();
+    	//mentres arrayOmplert sigui fals i fin sigui true 
+    	while (!arrayOmplert && fin) {
+    		demanarIP();
+    		//Bucle per recorre les pocicions de la array
+    		for (int x = 0; x < ipIntroduida.length; x++) {
+    			//si la ipIntroduida no es igual a 0.0.0.0
+    			if (ipIntroduida[x] != ipFin) {
+    				buscarIpsRepetides();
+    				//si la ip está repetida
+    				if (ipRepetida) {
+    					System.out.println("ERROR: IP REPETIDA");
+        				System.out.println("#################################################################");
+    				}
+    				//si la ip no está repetida
+    				else if (!ipRepetida) {
+    					comprovarFormatIp();
+    					//si la Ip compleix amb els requisits d'estructura...
+    					if (ipCorrecta) {
+    						
+    					}
+    				}
+    			}
+    		}
+    	}
     }
     
     /** Funció o mètode que demana per teclat una IP i no en fa la comprovació de si és o
@@ -80,7 +103,13 @@ public class A1IntroduirIPs {
     	//Doble bucle for per recorre totes les posicions i comparar amb el métode equals les dades
     	for (int x = 0; x < ipIntroduida.length; x++) {
     		for (int y = x + 1; y < ipIntroduida.length; y++) {
-    			ipIntroduida[x].equals(ipIntroduida[y]);
+    			//si hi ha alguna ipIntroduida repetida fes...
+    			if (ipIntroduida[x].equals(ipIntroduida[y])) {
+    				ipRepetida = true;
+    			}
+    			else {
+    				ipRepetida = false;
+    			}
     		}
     	}
     }
@@ -128,8 +157,6 @@ public class A1IntroduirIPs {
                 	ipCorrecta = false;
                 	System.out.println("Les dades introduides no han sigut correctes, torna a repetir-ho");
                 	System.out.println("#################################################################");
-                	//com que no ha sigut correcte les dades introduides es repetirá tot el programa desde el inici.
-                	inici();
                 }
     	}       
     }
