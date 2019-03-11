@@ -1,6 +1,6 @@
 VARIABLES GLOBALES
 arrayIps[0]
-
+numerosIpsIntroduides
 //////////////
 //demanarString//
 ////////////
@@ -24,3 +24,11 @@ while (ipIntroduida está buida?){
 //hiHaIpsRepetides//
 ///////////////////
 VARIABLES LOCALS
+boolean ipRepetida
+for (i = 0; i <numeroIPsIntroduides; i++){
+}
+
+//////////////
+//guardarIP//
+////////////
+
