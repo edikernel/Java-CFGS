@@ -20,6 +20,26 @@ while (ipIntroduida está buida?){
 }
 
 
+COPIA SEGURIDAD
+private demanarString(String missatge, String missatgeError, String ipIntroduida){
+    	/////////////////////
+    	//VARIABLES LOCALS//
+    	///////////////////
+        Scanner scanner = new Scanner(System.in);//variable scanner que fa crida al mètode Scanner
+    	//missatge = "Introduiu una IP (4 números separats per punt entre 0 i 255)";//donar atribut
+    	//missatgeError = "No s'admeten IPs buides";//donar atribut
+    	///////////
+    	//FUNCIÓ//
+    	/////////
+    	ipIntroduida = scanner.nextLine();//escoltar les dades pel teclat
+    	while (ipIntroduida.isEmpty()) {//ipIntroduida está buit?
+            System.out.println(missatgeError);
+            System.out.println(missatge);
+            ipIntroduida = scanner.nextLine();//escoltar les dades pel teclat
+    	}
+    }
+
+
 /////////////////////
 //hiHaIpsRepetides//
 ///////////////////
