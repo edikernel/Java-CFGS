@@ -1,0 +1,20 @@
+VARIABLES GLOBALES
+
+
+//////////////
+//demanarString//
+////////////
+Variables
+scanner --> llamada al metodo Scanner
+ipIntroduida --> String
+Parametres
+missatge --> Introduiu una IP (4 números separats per punt entre 0 i 255
+missatgeError --> No s'admeten IPs buides
+
+fer crida al metode escaner amb scanner
+fer crida al missatge
+ipIntroduida = dades escoltades
+while (ipIntroduida está buida?){
+    fer crida a missatgeError
+    ipIntroduida = escoltar les dades;
+}
