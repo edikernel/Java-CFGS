@@ -46,6 +46,8 @@ private demanarString(String missatge, String missatgeError, String ipIntroduida
 VARIABLES LOCALS
 boolean ipRepetida
 for (i = 0; i <numeroIPsIntroduides; i++){
+    si array[i]contiene lo mismo que demanarString
+    ipRpetida = true;
 }
 
 //////////////
