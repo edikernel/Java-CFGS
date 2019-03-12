@@ -93,8 +93,8 @@ public class Activitat1 {
      * @param arrayIps Simboolitza l'array on buscarem si hi ha ipIntroduida
      * @return cert si IpIntroduida es dins d'arrayIps, false altrament
      */
-    private boolean hiHaIpsRepetides(String ipIntroduida, String[] arrayIps){
-
+    private boolean hiHaIpsRepetides(){
+    	//String ipIntroduida, String[] arrayIps --> Es necesario?
     }
     
     /**
