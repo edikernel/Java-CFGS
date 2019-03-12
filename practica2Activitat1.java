@@ -1,5 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
+/** To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
@@ -21,7 +20,8 @@ public class Activitat1 {
      * les funcions!
      */
     static final String IP_FINAL = "0.0.0.0";
-    String[]  arrayIps = new String[0];//Mesura inicial predefinida per l'array
+    String[] arrayIps = new String[0];//Mesura inicial predefinida per l'array
+    
     /** 
      * Punt d'entrada al programa, crea una variable del tipus igual al nom de
      * la classe i crida a la funció d'inici per tal que comenci l'execució.
@@ -44,7 +44,14 @@ public class Activitat1 {
      * de l'array d'IPs.
      */
     public void inici(){
-        demanarString("hola");
+        while (!demanarString().contentEquals(IP_FINAL)) {
+        	//Mentres el atribut de sortida de demanarString sigui diferent a IP_FINAL
+        	demanarString();
+        	if (!demanarString().contentEquals(IP_FINAL)) {
+        		//si demanarString es diferent a IP_FINAL
+        		//BUSCARipREpetides
+        	}
+        }
     }
     
     /**
@@ -59,24 +66,23 @@ public class Activitat1 {
      * que aquest introdueixi una String buida
      * @return El text introduït
      */
-    public String demanarString(String ipIntroduida){
+    private String demanarString(){
     	/////////////////////
     	//VARIABLES LOCALS//
     	///////////////////
     	Scanner scanner = new Scanner(System.in);//variable scanner que fa crida al mètode Scanner
     	String missatge = "Introduiu una IP (4 números separats per punt entre 0 i 255)";//donar atribut
     	String missatgeError = "No s'admeten IPs buides";//donar atribut
+    	String ipIntroduida;
     	///////////
     	//FUNCIÓ//
     	/////////
-    	System.out.println(missatge);
     	ipIntroduida = scanner.nextLine();//escoltar les dades pel teclat
     	while (ipIntroduida.isEmpty()) {//ipIntroduida está buit?
     		System.out.println(missatgeError);
-    		System.out.println(missatge);
-    		ipIntroduida = scanner.nextLine();
+    		ipIntroduida = scanner.nextLine();//escoltar les dades pel teclat
     	}
-    	
+    	return ipIntroduida;
     }
     
     /**
@@ -87,8 +93,8 @@ public class Activitat1 {
      * @param arrayIps Simboolitza l'array on buscarem si hi ha ipIntroduida
      * @return cert si IpIntroduida es dins d'arrayIps, false altrament
      */
-    private boolean hiHaIpsRepetides(String ipIntroduida, String[] arrayIps, boolean ipRepetida){
-    	ipRepetida = false;
+    private boolean hiHaIpsRepetides(String ipIntroduida, String[] arrayIps){
+
     }
     
     /**
@@ -125,7 +131,7 @@ public class Activitat1 {
      * posició el paràmetre ipIntroduida
      */
     private String[] guardarIP(String[] arrayIps, String ipIntroduida){
-    	
+
     }
 
     /** 
