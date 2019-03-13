@@ -1,4 +1,4 @@
-/** To change this license header, choose License Headers in Project Properties.
+** To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
@@ -49,6 +49,7 @@ public class Activitat1 {
         	demanarString();
         	if (!demanarString().contentEquals(IP_FINAL)) {
         		//si demanarString es diferent a IP_FINAL
+        		hiHaIpsRepetides();
         		//BUSCARipREpetides
         	}
         }
@@ -93,8 +94,14 @@ public class Activitat1 {
      * @param arrayIps Simboolitza l'array on buscarem si hi ha ipIntroduida
      * @return cert si IpIntroduida es dins d'arrayIps, false altrament
      */
-    private boolean hiHaIpsRepetides(){
+    private boolean hiHaIpsRepetides(int numeroIPsIntroduides){
     	//String ipIntroduida, String[] arrayIps --> Es necesario?
+    	boolean ipRepetida = false;//valor per defecte
+    	for (int i = 0; i < numeroIPsIntroduides; i++) {
+    		if (arrayIps[i].contentEquals(demanarString())) {
+    			ipRepetida = true;
+    		}
+    	}
     }
     
     /**
